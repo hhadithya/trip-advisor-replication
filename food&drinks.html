@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Hadithya N.W.M.H">
+        <meta name="description" content="Recreating the UI design of Trip Advisor web site">
+        <link rel="icon" sizes="any" href="assets\images\logo.ico">
+        <link rel="stylesheet" href="css/food&drinks-style.css">
+        <link rel="stylesheet" href="css/header-style.css">
+        <link rel="stylesheet" href="css/scroll-snap.css">
+        <link rel="stylesheet" href="css/footer-style.css">
+        <script type="text/javascript" src="js/scrollSnap.js"></script>
+        <title>Tripadvisor: Over a billion reviews &amp; contributions for Hotels, Attractions, Restaurants, and more</title>
+
+        <style>
+            header{
+                position: sticky;
+                border-bottom: 0.5px solid rgb(220, 220, 220);
+            }
+            .nav-search-box{
+                visibility: visible;
+            }
+        </style>
+    </head>
+<body>
+    <header>
+        <div class="top-bar">
+            <nav class="nav-bar">
+                <picture class="main-logo">
+                    <a href="index.html"><img src="assets\images\svg\tripadvisor_logo.svg" alt=""></a>
+                </picture>
+                <div class="nav-search-box" id="search">
+                    <form action="">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                            width="30" height="30"
+                            viewBox="0 0 30 30">
+                            <path d="M 13 3 C 7.4889971 3 3 7.4889971 3 13 C 3 18.511003 7.4889971 23 13 23 C 15.396508 23 17.597385 22.148986 19.322266 20.736328 L 25.292969 26.707031 A 1.0001 1.0001 0 1 0 26.707031 25.292969 L 20.736328 19.322266 C 22.148986 17.597385 23 15.396508 23 13 C 23 7.4889971 18.511003 3 13 3 z M 13 5 C 17.430123 5 21 8.5698774 21 13 C 21 17.430123 17.430123 21 13 21 C 8.5698774 21 5 17.430123 5 13 C 5 8.5698774 8.5698774 5 13 5 z"></path>
+                        </svg>
+                        <input type="text">
+                    </form>
+                </div>
+                <div class="nav-links">
+                    <div class="link-card">
+                        <a href="">
+                            <svg viewBox="0 0 24 24" width="24px" height="24px" class="d Vb UmNoP"><path fill-rule="evenodd" clip-rule="evenodd" d="M14.288 6.793L6.69 14.368l-.816 3.746 3.724-.839 7.588-7.583-2.9-2.9zm3.96 1.84l-2.898-2.9.556-.554A2.318 2.318 0 0117.52 4.5c.378 0 .73.104 1.031.315l.01.007.012.008c1.12.757 1.221 2.26.326 3.151l-.65.651zm-7.896 10.01l-5.99 1.35C4.34 20 4.319 20 4.298 20a.297.297 0 01-.29-.36l1.31-6.023 9.529-9.5A3.818 3.818 0 0117.52 3c.66 0 1.318.184 1.893.587a3.536 3.536 0 01.546 5.457l-9.607 9.599z"></path></svg>
+                            <span class="link-text">Review</span>
+                        </a>
+                    </div>
+                    <div class="link-card">
+                        <a href="">
+                            <svg viewBox="0 0 24 24" width="24px" height="24px" class="d Vb UmNoP"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.798 5.786A5.769 5.769 0 017.72 4.25c1.455 0 2.857.548 3.922 1.536l.005.005.341.322.332-.317a5.769 5.769 0 013.928-1.54c1.458 0 2.862.55 3.928 1.54l.004.004c1.093 1.032 1.599 2.324 1.569 3.662-.03 1.323-.578 2.643-1.5 3.785-.884 1.096-2.85 2.943-4.547 4.478a183.566 183.566 0 01-3.153 2.785l-.069.059-.489-.569.49.569-.486.416-.488-.412a101.98 101.98 0 01-7.75-7.288l-.021-.021-.02-.023c-1.725-2.115-2.203-5.32.08-7.453l.002-.002zm8.19 13.226a174.415 174.415 0 002.708-2.4c1.72-1.556 3.59-3.32 4.385-4.306.757-.939 1.148-1.948 1.168-2.877.02-.912-.313-1.795-1.097-2.536a4.269 4.269 0 00-2.904-1.138 4.269 4.269 0 00-2.903 1.136l-1.35 1.292-1.375-1.3a4.269 4.269 0 00-2.9-1.133 4.269 4.269 0 00-2.901 1.135c-1.507 1.408-1.353 3.659.042 5.385a100.45 100.45 0 007.127 6.742z"></path></svg>
+                            <span class="link-text">Trips</span>
+                        </a>
+                    </div>
+                    <div class="link-card">
+                        <a href="">
+                            <svg viewBox="0 0 24 24" width="24px" height="24px" class="d Vb UmNoP"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2.25a.75.75 0 01.75.75v1.283c1.865.168 3.412.964 4.529 2.218 1.254 1.409 1.922 3.343 1.956 5.487.013.811.015 4.106.015 5.762H21v1.5h-5.336c-.063.31-.172.694-.368 1.085-.232.464-.592.951-1.146 1.32-.558.372-1.269.595-2.15.595s-1.592-.223-2.15-.595a3.382 3.382 0 01-1.146-1.32 4.378 4.378 0 01-.368-1.085H3v-1.5h1.75c0-1.651.002-4.932.015-5.755C4.76 9.843 5.43 7.907 6.694 6.5 7.82 5.245 9.384 4.45 11.25 4.283V3a.75.75 0 01.75-.75zm-5.75 15.5h11.5c0-1.657-.002-4.94-.015-5.738-.03-1.856-.604-3.422-1.576-4.513C15.196 6.418 13.799 5.75 12 5.75c-1.8 0-3.218.67-4.19 1.751-.98 1.09-1.552 2.651-1.545 4.496v.015a748.17 748.17 0 00-.015 5.738zm3.632 1.5c.04.135.094.276.164.415.143.286.346.549.636.742.285.19.7.343 1.318.343.619 0 1.033-.152 1.318-.343.29-.193.493-.456.636-.742a2.7 2.7 0 00.164-.415H9.883z"></path></svg>
+                            <span class="link-text">Alerts</span>
+                        </a>
+                    </div>
+                    <div class="sign-in-btn" style="padding: 3px 10px 0px 10px;">
+                        <a style="background-color: black;border-radius: 18px;padding: 12.5px 16px;" >
+                            <span style="color: white;">Sign in</span>
+                        </a>
+                    </div>
+                    <div class="link-card">
+                        <a href="">
+                            <svg viewBox="0 0 24 24" width="24px" height="24px" class="d Vb UmNoP"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.5 4.75H2v-1.5h2.5c.779 0 1.354.398 1.71.844.339.423.54.959.54 1.406v.25h14.71l-1.874 7.5H6.75v1.25c0 .29.164.76.475 1.175.327.436.632.575.775.575h9a2.75 2.75 0 11-2.45 1.5h-3.1a2.75 2.75 0 11-4.645-.407c-.314-.219-.578-.499-.78-.768-.439-.585-.775-1.365-.775-2.075v-9a.95.95 0 00-.21-.469c-.144-.179-.319-.281-.54-.281zm4.5 13a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5zm8 0a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5zm-10.25-6h11.664l1.125-4.5H6.75v4.5z"></path></svg>
+                            <span class="link-text">Cart</span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="tabs">
+        <div class="tab-links">
+            <a href="index.html">Home</a>
+            <a href="#">Hotels</a>
+            <a href="#">Things to do</a>
+            <a href="#">Restaurants</a>
+            <a href="#">Flights</a>
+            <a href="#">Vacation Rentals</a>
+            <a href="#">Shopping</a>
+            <a href="#">Cruises</a>
+            <a href="#">Rental Cars</a>
+            <a href=""><img src="https://img.icons8.com/ios-glyphs/30/null/ellipsis.png" style="width: 20px;"/></a>
+        </div>
+    </div>
+    <main>
+        <div style="width: 1136px; padding: 20px 0px; ">
+            <small>
+                <a href="" style="text-decoration: underline;color: #333333; font-size: 12px;display: flex;align-items: center;">
+                    All Articles&nbsp;
+                    <img src="https://img.icons8.com/ios/50/null/forward--v1.png" width="12px"/>
+                </a>
+            </small>
+        </div>
+        <div class="section">
+            <div class="article">
+                <div class="article-card">
+                    <img src="assets/images/foods&drinks/food&drink1.jpg" alt="">
+                </div>
+                <div class="article-card">
+                    <img src="assets/images/foods&drinks/food&drink2.jpg" alt="">
+                </div>
+            </div>
+            <hr>
+            <article class="article">
+                <div class="article-card">
+                    <img src="assets/images/foods&drinks/faves.jpg" alt="">
+                    <h2>These top-rated experiences have all won Travelers’ Choice awards (in other words, they’re *chef’s kiss*).</h2>
+                </div>       
+            </article>
+            <div class="faves" style="overflow: hidden;">
+                <div class="fave-section">
+                    <div class="scroll-snap">
+                        <div id="left-arrow" style="margin-top: -150px;" class="left-arrow1">
+                            <button class="arrow-btn" onclick="scrollSnap1('left')">
+                                <svg viewBox="0 0 24 24" width="24px" height="24px" class="d Vb UmNoP"><path d="M10.304 3.506l-8.048 8.047a.644.644 0 000 .895l8.048 8.047a.624.624 0 00.883 0l.882-.883a.624.624 0 000-.883l-5.481-5.48h14.714a.625.625 0 00.623-.625v-1.248a.624.624 0 00-.623-.624H6.588l5.481-5.481a.624.624 0 000-.883l-.882-.883a.623.623 0 00-.883-.004c-.001.002-.002.003 0 .005z"></path></svg>
+                            </button>
+                        </div>
+                        <div class="image-slider fave">
+                            <div class="card1 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/faves1.jpg" alt="" width="270px" height="270px">
+                                    <img src="https://img.icons8.com/metro/26/null/like.png"/>
+                                </a>
+                                <h4>Paris Wine Tasting plus Cheese Lunch with an Expert Sommelier Guide</h4>
+                                <svg class="UctUV d H0 hzzSG" viewBox="0 0 128 24" width="68" height="12" aria-label=""><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform=""></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(26 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(52 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(78 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(104 0)"></path></svg>
+                                <small style="font-size: 12px;letter-spacing: 1px;color: #333333;">7,413</small>
+                                <h5 style="font-size: 16px;margin-top: 5px;">from €111 per adult</h5>
+                            </div>
+                            
+                            <div class="card1 card">
+                                <a href="food&drinks.html">
+                                    <img src="assets/images/foods&drinks/faves2.jpg" alt="" width="270px" height="270px">
+                                    <img src="https://img.icons8.com/metro/26/null/like.png"/>
+                                </a>
+                                <h4>Douro Valley 3 Wine Experiences with Traditional Lunch and Optional Boat Cruise</h4>
+                                <svg class="UctUV d H0 hzzSG" viewBox="0 0 128 24" width="68" height="12" aria-label=""><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform=""></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(26 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(52 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(78 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(104 0)"></path></svg>
+                                <small style="font-size: 12px;letter-spacing: 1px;color: #333333;">463</small>
+                                <h5 style="font-size: 16px;margin-top: 5px;">from €118 per adult</h5>
+                            </div>
+                            <div class="card1 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/faves3.jpg" alt="" width="270px" height="270px">
+                                    <img src="https://img.icons8.com/metro/26/null/like.png"/>
+                                </a>
+                                <p style="margin: 0px;">
+                                    <button style="background-color:white;margin: 0px;padding : 3px 3px 3px 3px;font-size: 12px;text-transform: uppercase;font-weight: 600;color: #3f3f3f;border: 1px solid #333333;border-radius: 5px;">Likely to sell out</button>
+                                    <button style="background-color:white;margin: 0px;padding : 3px 3px 3px 3px;font-size: 12px;text-transform: uppercase;font-weight: 600;color: #3f3f3f;border: 1px solid #333333;border-radius: 5px;">Best Seller</button>
+                                </p>
+                                <h4>Pizza and Gelato Cooking Class at a Tuscan Farmhouse from Florence</h4>
+                                <svg class="UctUV d H0 hzzSG" viewBox="0 0 128 24" width="68" height="12" aria-label=""><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform=""></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(26 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(52 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(78 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(104 0)"></path></svg>
+                                <small style="font-size: 12px;letter-spacing: 1px;color: #333333;">3,354</small>
+                                <h5 style="font-size: 16px;margin-top: 5px;">from €133 per adult</h5>
+                            </div>
+                            <div class="card1 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/faves4.jpg" alt="" width="270px" height="270px">
+                                    <img src="https://img.icons8.com/metro/26/null/like.png"/>
+                                </a>
+                                <p style="margin: 0px;">
+                                    <button style="background-color:white;margin: 0px;padding : 3px 3px 3px 3px;font-size: 12px;text-transform: uppercase;font-weight: 600;color: #3f3f3f;border: 1px solid #333333;border-radius: 5px;">Likely to sell out</button>                                
+                                </p>
+                                <h4>Thai and Akha Cooking Class in Chiang Mai</h4>
+                                <svg class="UctUV d H0 hzzSG" viewBox="0 0 128 24" width="68" height="12" aria-label=""><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform=""></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(26 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(52 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(78 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(104 0)"></path></svg>
+                                <small style="font-size: 12px;letter-spacing: 1px;color: #333333;">2,474</small>
+                                <h5 style="font-size: 16px;margin-top: 5px;">from €35 per adult</h5>
+                            </div>
+                            <div class="card1 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/faves5.jpg" alt="" width="270px" height="270px">
+                                    <img src="https://img.icons8.com/metro/26/null/like.png" style="display: none;" class="heart">
+                                </a>
+                                <p style="margin: 0px;">
+                                    <button style="background-color:white;margin: 0px;padding : 3px 3px 3px 3px;font-size: 12px;text-transform: uppercase;font-weight: 600;color: #3f3f3f;border: 1px solid #333333;border-radius: 5px;">Likely to sell out</button>                                
+                                </p>
+                                <h4>NYC Greenwich Village Italian Food Tour</h4>
+                                <svg class="UctUV d H0 hzzSG" viewBox="0 0 128 24" width="68" height="12" aria-label=""><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform=""></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(26 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(52 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(78 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(104 0)"></path></svg>
+                                <small style="font-size: 12px;letter-spacing: 1px;color: #333333;">517</small>
+                                <h5 style="font-size: 16px;margin-top: 5px;">from €73 per adult</h5>
+                            </div>
+                            <div class="card1 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/faves6.jpg" alt="" width="270px" height="270px">
+                                    <img src="https://img.icons8.com/metro/26/null/like.png" style="display: none;" class="heart">
+                                </a>
+                                <h4>Treasures of Lisboa Food Tours</h4>
+                                <svg class="UctUV d H0 hzzSG" viewBox="0 0 128 24" width="68" height="12" aria-label=""><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform=""></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(26 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(52 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(78 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(104 0)"></path></svg>
+                                <small style="font-size: 12px;letter-spacing: 1px;color: #333333;">1,146</small>
+                                <h5 style="font-size: 16px;margin-top: 5px;">from €89 per adult</h5>
+                            </div>
+                            <div class="card1 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/faves7.jpg" alt="" width="270px" height="270px">
+                                    <img src="https://img.icons8.com/metro/26/null/like.png" style="display: none;" class="heart">
+                                </a>
+                                <h4>The Roman Food Tour in Trastevere 5pm or 11am start</h4>
+                                <svg class="UctUV d H0 hzzSG" viewBox="0 0 128 24" width="68" height="12" aria-label=""><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform=""></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(26 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(52 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(78 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(104 0)"></path></svg>
+                                <small style="font-size: 12px;letter-spacing: 1px;color: #333333;">862</small>
+                                <h5 style="font-size: 16px;margin-top: 5px;">from €135 per adult</h5>
+                            </div>
+                            <div class="card1 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/faves8.jpg" alt="" width="270px" height="270px">
+                                    <img src="https://img.icons8.com/metro/26/null/like.png" style="display: none;" class="heart">
+                                </a>
+                                <h4>Craft Beer Tour in Lower Downtown Denver</h4>
+                                <svg class="UctUV d H0 hzzSG" viewBox="0 0 128 24" width="68" height="12" aria-label=""><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform=""></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(26 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(52 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(78 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(104 0)"></path></svg>
+                                <small style="font-size: 12px;letter-spacing: 1px;color: #333333;">455</small>
+                                <h5 style="font-size: 16px;margin-top: 5px;">from €54 per adult</h5>
+                            </div>
+                            <div class="card1 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/faves9.jpg" alt="" width="270px" height="270px">
+                                    <img src="https://img.icons8.com/metro/26/null/like.png" style="display: none;" class="heart">
+                                </a>
+                                <p style="margin: 0px;">
+                                    <button style="background-color:white;margin: 0px;padding : 3px 3px 3px 3px;font-size: 12px;text-transform: uppercase;font-weight: 600;color: #3f3f3f;border: 1px solid #333333;border-radius: 5px;">Best Seller</button>                                
+                                </p>
+                                <h4>Little Havana Food and Walking Tour in Miami</h4>
+                                <svg class="UctUV d H0 hzzSG" viewBox="0 0 128 24" width="68" height="12" aria-label=""><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform=""></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(26 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(52 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(78 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(104 0)"></path></svg>
+                                <small style="font-size: 12px;letter-spacing: 1px;color: #333333;">4,400</small>
+                                <h5 style="font-size: 16px;margin-top: 5px;">from €64 per adult</h5>
+                            </div>
+                            <div class="card1 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/faves10.jpg" alt="" width="270px" height="270px">
+                                    <img src="https://img.icons8.com/metro/26/null/like.png" style="display: none;" class="heart">
+                                </a>
+                                <h4>Wine Country Small-Group Tour from San Francisco with Tastings</h4>
+                                <svg class="UctUV d H0 hzzSG" viewBox="0 0 128 24" width="68" height="12" aria-label=""><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform=""></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(26 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(52 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(78 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(104 0)"></path></svg>
+                                <small style="font-size: 12px;letter-spacing: 1px;color: #333333;">844</small>
+                                <h5 style="font-size: 16px;margin-top: 5px;">from €157 per adult</h5>
+                            </div>
+                        </div>
+                        <div id="right-arrow" style="margin-top: -150px;" class="right-arrow1">
+                            <button class="arrow-btn" onclick="scrollSnap1('right')">
+                                <svg viewBox="0 0 24 24" width="24px" height="24px" class="d Vb UmNoP"><path d="M13.696 3.502a.624.624 0 00-.884.004l-.882.883a.624.624 0 000 .883l5.481 5.481H2.698a.624.624 0 00-.623.624v1.248c0 .346.279.623.623.625h14.714l-5.481 5.48a.624.624 0 000 .883l.882.883c.245.244.64.244.883 0l8.049-8.047a.646.646 0 000-.895l-8.049-8.048v-.004z"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <article class="article">
+                <div class="article-card">
+                    <img src="assets/images/foods&drinks/IG.jpg" alt="">
+                    <h2>Tastes good, looks good. You'll definitely want to share pics to your feed, and maybe even a couple appetizers.</h2>
+                </div>
+            </article>
+            <div class="faves" style="overflow: hidden;">
+                <div class="fave-section">
+                    <div class="scroll-snap">
+                        <div id="left-arrow" style="margin-top: -110px;" class="left-arrow2">
+                            <button class="arrow-btn" onclick="scrollSnap2('left')">
+                                <svg viewBox="0 0 24 24" width="24px" height="24px" class="d Vb UmNoP"><path d="M10.304 3.506l-8.048 8.047a.644.644 0 000 .895l8.048 8.047a.624.624 0 00.883 0l.882-.883a.624.624 0 000-.883l-5.481-5.48h14.714a.625.625 0 00.623-.625v-1.248a.624.624 0 00-.623-.624H6.588l5.481-5.481a.624.624 0 000-.883l-.882-.883a.623.623 0 00-.883-.004c-.001.002-.002.003 0 .005z"></path></svg>
+                            </button>
+                        </div>
+                        <div class="image-slider ig">
+                            <div class="card2 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/IG1.jpg" alt="" width="270px" height="270px">
+                                    <img src="https://img.icons8.com/metro/26/null/like.png"/>
+                                </a>
+                                <h4>Amsterdam Small-Group Evening Canal Cruise Including Wine, Craft Beer, Cheese</h4>
+                                <svg class="UctUV d H0 hzzSG" viewBox="0 0 128 24" width="68" height="12" aria-label=""><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform=""></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(26 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(52 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(78 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(104 0)"></path></svg>
+                                <small style="font-size: 12px;letter-spacing: 1px;color: #333333;">85</small>
+                                <h5 style="font-size: 16px;margin-top: 5px;">from €54 per adult</h5>
+                            </div>
+                            <div class="card2 card">
+                                <a href="food&drinks.html">
+                                    <img src="assets/images/foods&drinks/IG2.jpg" alt="" width="270px" height="270px">
+                                    <img src="https://img.icons8.com/metro/26/null/like.png"/>
+                                </a>
+                                <p style="margin: 0px;">
+                                    <button style="background-color:white;margin: 0px;padding : 3px 3px 3px 3px;font-size: 12px;text-transform: uppercase;font-weight: 600;color: #3f3f3f;border: 1px solid #333333;border-radius: 5px;">Likely to sell out</button>                                
+                                </p>
+                                <h4>Nightlife Osaka Food Tour</h4>
+                                <svg class="UctUV d H0 hzzSG" viewBox="0 0 128 24" width="68" height="12" aria-label=""><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform=""></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(26 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(52 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(78 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(104 0)"></path></svg>
+                                <small style="font-size: 12px;letter-spacing: 1px;color: #333333;">116</small>
+                                <h5 style="font-size: 16px;margin-top: 5px;">from €186 per adult</h5>
+                            </div>
+                            <div class="card2 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/I3.jpg" alt="" width="270px" height="270px">
+                                    <img src="https://img.icons8.com/metro/26/null/like.png"/>
+                                </a>
+                                <h4>Roman countryside Food & Wine Tasting in a medieval winery</h4>
+                                <svg class="UctUV d H0 hzzSG" viewBox="0 0 128 24" width="68" height="12" aria-label=""><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform=""></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(26 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(52 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(78 0)"></path><path d="M 12 0C5.389 0 0 5.389 0 12c0 6.62 5.389 12 12 12 6.62 0 12-5.379 12-12S18.621 0 12 0zm0 2a9.984 9.984 0 0110 10 9.976 9.976 0 01-10 10z" transform="translate(104 0)"></path></svg>
+                                <small style="font-size: 12px;letter-spacing: 1px;color: #333333;">167</small>
+                                <h5 style="font-size: 16px;margin-top: 5px;">from €89 per adult</h5>
+                            </div>
+                            <div class="card2 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/IG4.jpg" alt="" width="270px" height="270px">
+                                    <img src="https://img.icons8.com/metro/26/null/like.png"/>
+                                </a>
+                                <h4>Brooklyn Food Tour: The Flavors of Williamsburg</h4>
+                                <svg class="UctUV d H0 hzzSG" viewBox="0 0 128 24" width="68" height="12" aria-label=""><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform=""></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(26 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(52 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(78 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(104 0)"></path></svg>
+                                <small style="font-size: 12px;letter-spacing: 1px;color: #333333;">96</small>
+                                <h5 style="font-size: 16px;margin-top: 5px;">from €72 per adult</h5>
+                            </div>
+                            <div class="card2 card" >
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/IG5.jpg" alt="" width="270px" height="270px">
+                                    <img src="https://img.icons8.com/metro/26/null/like.png" style="display: none;" class="heart">
+                                </a>
+                                <h4>Cocktail Masterclass with Tapas in Barcelona, Spain</h4>
+                                <svg class="UctUV d H0 hzzSG" viewBox="0 0 128 24" width="68" height="12" aria-label=""><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform=""></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(26 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(52 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(78 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(104 0)"></path></svg>
+                                <small style="font-size: 12px;letter-spacing: 1px;color: #333333;">133</small>
+                                <h5 style="font-size: 16px;margin-top: 5px;">from €49 per adult</h5>
+                            </div>
+                            <div class="card2 card" >
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/IG7.jpg" alt="" width="270px" height="270px">
+                                    <img src="https://img.icons8.com/metro/26/null/like.png" style="display: none;" class="heart">
+                                </a>
+                                <h4>Le Marais Paris The Original District Food and Wine Tasting Tour</h4>
+                                <svg class="UctUV d H0 hzzSG" viewBox="0 0 128 24" width="68" height="12" aria-label=""><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform=""></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(26 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(52 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(78 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(104 0)"></path></svg>
+                                <small style="font-size: 12px;letter-spacing: 1px;color: #333333;">587</small>
+                                <h5 style="font-size: 16px;margin-top: 5px;">from €115 per adult</h5>
+                            </div>
+                            <div class="card2 card" >
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/IG8.jpg" alt="" width="270px" height="270px">
+                                    <img src="https://img.icons8.com/metro/26/null/like.png" style="display: none;" class="heart">
+                                </a>
+                                <h4>San Francisco Chinatown Food Tour</h4>
+                                <svg class="UctUV d H0 hzzSG" viewBox="0 0 128 24" width="68" height="12" aria-label=""><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform=""></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(26 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(52 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(78 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(104 0)"></path></svg>
+                                <small style="font-size: 12px;letter-spacing: 1px;color: #333333;">74</small>
+                                <h5 style="font-size: 16px;margin-top: 5px;">from €83 per adult</h5>
+                            </div>
+                            <div class="card2 card" >
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/IG9.jpg" alt="" width="270px" height="270px">
+                                    <img src="https://img.icons8.com/metro/26/null/like.png" style="display: none;" class="heart">
+                                </a>
+                                <h4>Pub Crawl Madrid by Madpartycrew</h4>
+                                <svg class="UctUV d H0 hzzSG" viewBox="0 0 128 24" width="68" height="12" aria-label=""><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform=""></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(26 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(52 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(78 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(104 0)"></path></svg>
+                                <small style="font-size: 12px;letter-spacing: 1px;color: #333333;">297</small>
+                                <h5 style="font-size: 16px;margin-top: 5px;">from €17 per adult</h5>
+                            </div>
+                            <div class="card2 card" >
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/IG10.jpg" alt="" width="270px" height="270px">
+                                    <img src="https://img.icons8.com/metro/26/null/like.png" style="display: none;" class="heart">
+                                </a>
+                                <h4>River North Food Walking Tour</h4>
+                                <svg class="UctUV d H0 hzzSG" viewBox="0 0 128 24" width="68" height="12" aria-label=""><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform=""></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(26 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(52 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(78 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(104 0)"></path></svg>
+                                <small style="font-size: 12px;letter-spacing: 1px;color: #333333;">67</small>
+                                <h5 style="font-size: 16px;margin-top: 5px;">from €83 per adult</h5>
+                            </div>
+                            <div class="card2 card" >
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/IG11.jpg" alt="" width="270px" height="270px">
+                                    <img src="https://img.icons8.com/metro/26/null/like.png" style="display: none;" class="heart">
+                                </a>
+                                <h4>Melbourne Walking Tour: Uncover Hidden Laneway Bars</h4>
+                                <svg class="UctUV d H0 hzzSG" viewBox="0 0 128 24" width="68" height="12" aria-label=""><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform=""></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(26 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(52 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(78 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(104 0)"></path></svg>
+                                <small style="font-size: 12px;letter-spacing: 1px;color: #333333;">306</small>
+                                <h5 style="font-size: 16px;margin-top: 5px;">from €56 per adult</h5>
+                            </div>
+                        </div>
+                        <div id="right-arrow" style="margin-top: -110px;" class="right-arrow2">
+                            <button class="arrow-btn" onclick="scrollSnap2('right')" >
+                                <svg viewBox="0 0 24 24" width="24px" height="24px" class="d Vb UmNoP"><path d="M13.696 3.502a.624.624 0 00-.884.004l-.882.883a.624.624 0 000 .883l5.481 5.481H2.698a.624.624 0 00-.623.624v1.248c0 .346.279.623.623.625h14.714l-5.481 5.48a.624.624 0 000 .883l.882.883c.245.244.64.244.883 0l8.049-8.047a.646.646 0 000-.895l-8.049-8.048v-.004z"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+            <article class="article">
+                <div class="article-card">
+                    <img src="assets/images/foods&drinks/action.jpg" alt="">
+                    <h2>Spice up your meal with experiences that let you do a whole lot more than order from a menu.</h2>
+                </div>
+            </article>
+            <div class="faves" style="overflow: hidden;">
+                <div class="fave-section">
+                    <div class="scroll-snap">
+                        <div id="left-arrow" style="margin-top: -110px;">
+                            <button class="arrow-btn" onclick="">
+                                <svg viewBox="0 0 24 24" width="24px" height="24px" class="d Vb UmNoP"><path d="M10.304 3.506l-8.048 8.047a.644.644 0 000 .895l8.048 8.047a.624.624 0 00.883 0l.882-.883a.624.624 0 000-.883l-5.481-5.48h14.714a.625.625 0 00.623-.625v-1.248a.624.624 0 00-.623-.624H6.588l5.481-5.481a.624.624 0 000-.883l-.882-.883a.623.623 0 00-.883-.004c-.001.002-.002.003 0 .005z"></path></svg>
+                            </button>
+                        </div>
+                        <div class="image-slider">
+                            <div class="card2 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/action1.jpg" alt="" width="270px" height="270px">
+                                    <img src="https://img.icons8.com/metro/26/null/like.png"/>
+                                </a>
+                                <h4>Bangkok Midnight Food Tour by Tuk Tuk</h4>
+                                <svg class="UctUV d H0 hzzSG" viewBox="0 0 128 24" width="68" height="12" aria-label=""><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform=""></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(26 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(52 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(78 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(104 0)"></path></svg>
+                                <small style="font-size: 12px;letter-spacing: 1px;color: #333333;">796</small>
+                                <h5 style="font-size: 16px;margin-top: 5px;">from €61 per adult</h5>
+                            </div>
+                            <div class="card2 card">
+                                <a href="food&drinks.html">
+                                    <img src="assets/images/foods&drinks/action2.jpg" alt="" width="270px" height="270px">
+                                    <img src="https://img.icons8.com/metro/26/null/like.png"/>
+                                </a>
+                                <h4>Tuscany Vespa Wine Tour</h4>
+                                <svg class="UctUV d H0 hzzSG" viewBox="0 0 128 24" width="68" height="12" aria-label=""><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform=""></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(26 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(52 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(78 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(104 0)"></path></svg>
+                                <small style="font-size: 12px;letter-spacing: 1px;color: #333333;">111</small>
+                                <h5 style="font-size: 16px;margin-top: 5px;">from €200 per adult</h5>
+                            </div>
+                            <div class="card2 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/action3.jpg" alt="" width="270px" height="270px">
+                                    <img src="https://img.icons8.com/metro/26/null/like.png"/>
+                                </a>
+                                <h4>Hawaiian Food Tour by Bike in Oahu</h4>
+                                <svg class="UctUV d H0 hzzSG" viewBox="0 0 128 24" width="68" height="12" aria-label=""><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform=""></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(26 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(52 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(78 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(104 0)"></path></svg>
+                                <small style="font-size: 12px;letter-spacing: 1px;color: #333333;">177</small>
+                                <h5 style="font-size: 16px;margin-top: 5px;">from €176 per adult</h5>
+                            </div>
+                            <div class="card2 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/action4.jpg" alt="" width="270px" height="270px">
+                                    <img src="https://img.icons8.com/metro/26/null/like.png"/>
+                                </a>
+                                <h4>Frenchmen Street Live Music Pub Crawl in New Orleans</h4>
+                                <svg class="UctUV d H0 hzzSG" viewBox="0 0 128 24" width="68" height="12" aria-label=""><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform=""></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(26 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(52 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(78 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(104 0)"></path></svg>
+                                <small style="font-size: 12px;letter-spacing: 1px;color: #333333;">237</small>
+                                <h5 style="font-size: 16px;margin-top: 5px;">from €246 per adult</h5>
+                            </div>
+                            <div class="card2 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/action5.jpg" alt="" width="270px" height="270px">
+                                </a>
+                            </div>
+                            <div class="card2 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/action6.jpg" alt="" width="270px" height="270px">
+                                </a>
+                            </div>
+                            <div class="card2 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/action7.jpg" alt="" width="270px" height="270px">
+                                </a>
+                            </div>
+                            <div class="card2 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/action8.jpg" alt="" width="270px" height="270px">
+                                </a>
+                            </div>
+                            <div class="card2 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/action9.jpg" alt="" width="270px" height="270px">
+                                </a>
+                            </div>
+                            <div class="card2 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/action10.jpg" alt="" width="270px" height="270px">
+                                </a>
+                            </div>
+                        </div>
+                        <div id="right-arrow" style="margin-top: -110px;">
+                            <button class="arrow-btn" onclick="">
+                                <svg viewBox="0 0 24 24" width="24px" height="24px" class="d Vb UmNoP"><path d="M13.696 3.502a.624.624 0 00-.884.004l-.882.883a.624.624 0 000 .883l5.481 5.481H2.698a.624.624 0 00-.623.624v1.248c0 .346.279.623.623.625h14.714l-5.481 5.48a.624.624 0 000 .883l.882.883c.245.244.64.244.883 0l8.049-8.047a.646.646 0 000-.895l-8.049-8.048v-.004z"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            
+            <article class="article">
+                <div class="article-card">
+                    <img src="assets/images/foods&drinks/off.jpg" alt="">
+                    <h2>When you want to find the <i>really</i> good stuff, sometimes, you gotta do things a little differently. Try a secret tour, check out an under-the-radar market, or take a cooking class taught by a local.</h2>
+                </div>
+            </article>
+            <div class="faves">
+                <div class="fave-section">
+                    <div class="scroll-snap">
+                        <div id="left-arrow" style="margin-top: -110px;">
+                            <button class="arrow-btn" onclick="">
+                                <svg viewBox="0 0 24 24" width="24px" height="24px" class="d Vb UmNoP"><path d="M10.304 3.506l-8.048 8.047a.644.644 0 000 .895l8.048 8.047a.624.624 0 00.883 0l.882-.883a.624.624 0 000-.883l-5.481-5.48h14.714a.625.625 0 00.623-.625v-1.248a.624.624 0 00-.623-.624H6.588l5.481-5.481a.624.624 0 000-.883l-.882-.883a.623.623 0 00-.883-.004c-.001.002-.002.003 0 .005z"></path></svg>
+                            </button>
+                        </div>
+                        <div class="image-slider">
+                            <div class="card2 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/off1.jpg" alt="" width="270px" height="270px">
+                                    <img src="https://img.icons8.com/metro/26/null/like.png"/>
+                                </a>
+                                <p style="margin: 0px;">
+                                    <button style="background-color:white;margin: 0px;padding : 3px 3px 3px 3px;font-size: 12px;text-transform: uppercase;font-weight: 600;color: #3f3f3f;border: 1px solid #333333;border-radius: 5px;">Best Seller</button>                                
+                                </p>
+                                <h4>Paris Montmartre walking tasting tour with Secret Food Tours</h4>
+                                <svg class="UctUV d H0 hzzSG" viewBox="0 0 128 24" width="68" height="12" aria-label=""><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform=""></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(26 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(52 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(78 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(104 0)"></path></svg>
+                                <small style="font-size: 12px;letter-spacing: 1px;color: #333333;">1,180</small>
+                                <h5 style="font-size: 16px;margin-top: 5px;">from €109 per adult</h5>
+                            </div>
+                            <div class="card2 card">
+                                <a href="food&drinks.html">
+                                    <img src="assets/images/foods&drinks/off2.jpg" alt="" width="270px" height="270px">
+                                    <img src="https://img.icons8.com/metro/26/null/like.png"/>
+                                </a>
+                                <h4>Cook like a local with Seaview</h4>
+                                <svg class="UctUV d H0 hzzSG" viewBox="0 0 128 24" width="68" height="12" aria-label=""><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform=""></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(26 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(52 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(78 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(104 0)"></path></svg>
+                                <small style="font-size: 12px;letter-spacing: 1px;color: #333333;">243</small>
+                                <h5 style="font-size: 16px;margin-top: 5px;">from €95 per adult</h5>
+                            </div>
+                            <div class="card2 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/off3.jpg" alt="" width="270px" height="270px">
+                                    <img src="https://img.icons8.com/metro/26/null/like.png"/>
+                                </a>
+                                <h4>Nairobi to Kiambethu Tea Farm Tour</h4>
+                                <svg class="UctUV d H0 hzzSG" viewBox="0 0 128 24" width="68" height="12" aria-label=""><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform=""></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(26 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(52 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(78 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(104 0)"></path></svg>
+                                <small style="font-size: 12px;letter-spacing: 1px;color: #333333;">29</small>
+                                <h5 style="font-size: 16px;margin-top: 5px;">from €100 per adult</h5>
+                            </div>
+                            <div class="card2 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/off4.jpg" alt="" width="270px" height="270px">
+                                    <img src="https://img.icons8.com/metro/26/null/like.png"/>
+                                </a>
+                                <h4>Experience Our Honey Farm And Beekeeping Tour</h4>
+                                <svg class="UctUV d H0 hzzSG" viewBox="0 0 128 24" width="68" height="12" aria-label=""><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform=""></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(26 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(52 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(78 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(104 0)"></path></svg>
+                                <small style="font-size: 12px;letter-spacing: 1px;color: #333333;">113</small>
+                                <h5 style="font-size: 16px;margin-top: 5px;">from €23 per adult</h5>
+                            </div>
+                            <div class="card2 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/off5.jpg" alt="" width="270px" height="270px">
+                                </a>
+                            </div>
+                            <div class="card2 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/off6.jpg" alt="" width="270px" height="270px">
+                                </a>
+                            </div>
+                            <div class="card2 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/off7.jpg" alt="" width="270px" height="270px">
+                                </a>
+                            </div>
+                            <div class="card2 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/off8.jpg" alt="" width="270px" height="270px">
+                                </a>
+                            </div>
+                            <div class="card2 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/off9.jpg" alt="" width="270px" height="270px">
+                                </a>
+                            </div>
+                            <div class="card2 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/off10.jpg" alt="" width="270px" height="270px">
+                                </a>
+                            </div>
+                        </div>
+                        <div id="right-arrow" style="margin-top: -110px;">
+                            <button class="arrow-btn" onclick="">
+                                <svg viewBox="0 0 24 24" width="24px" height="24px" class="d Vb UmNoP"><path d="M13.696 3.502a.624.624 0 00-.884.004l-.882.883a.624.624 0 000 .883l5.481 5.481H2.698a.624.624 0 00-.623.624v1.248c0 .346.279.623.623.625h14.714l-5.481 5.48a.624.624 0 000 .883l.882.883c.245.244.64.244.883 0l8.049-8.047a.646.646 0 000-.895l-8.049-8.048v-.004z"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            
+            <article class="article">
+                <div class="article-card">
+                    <img src="assets/images/foods&drinks/fancy.jpg" alt="">
+                    <h2>If you’ve got a little extra to spend, why not splurge on something that’ll make your trip one-in-a-million, like a private cooking class or drinks on a yacht?</h2>
+                </div>
+            </article>
+            <div class="faves">
+                <div class="fave-section">
+                    <div class="scroll-snap">
+                        <div id="left-arrow" style="margin-top: -110px;">
+                            <button class="arrow-btn" onclick="">
+                                <svg viewBox="0 0 24 24" width="24px" height="24px" class="d Vb UmNoP"><path d="M10.304 3.506l-8.048 8.047a.644.644 0 000 .895l8.048 8.047a.624.624 0 00.883 0l.882-.883a.624.624 0 000-.883l-5.481-5.48h14.714a.625.625 0 00.623-.625v-1.248a.624.624 0 00-.623-.624H6.588l5.481-5.481a.624.624 0 000-.883l-.882-.883a.623.623 0 00-.883-.004c-.001.002-.002.003 0 .005z"></path></svg>
+                            </button>
+                        </div>
+                        <div class="image-slider">
+                            <div class="card2 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/fancy1.jpg" alt="" width="270px" height="270px">
+                                    <img src="https://img.icons8.com/metro/26/null/like.png"/>
+                                </a>
+                                <h4>Paris Wine Tasting plus Cheese Lunch with an Expert Sommelier Guide</h4>
+                                <svg class="UctUV d H0 hzzSG" viewBox="0 0 128 24" width="68" height="12" aria-label=""><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform=""></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(26 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(52 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(78 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(104 0)"></path></svg>
+                                <small style="font-size: 12px;letter-spacing: 1px;color: #333333;">200</small>
+                                <h5 style="font-size: 16px;margin-top: 5px;">from €79 per adult</h5>
+                            </div>
+                            <div class="card2 card">
+                                <a href="food&drinks.html">
+                                    <img src="assets/images/foods&drinks/fancy2.jpg" alt="" width="270px" height="270px">
+                                    <img src="https://img.icons8.com/metro/26/null/like.png"/>
+                                </a>
+                                <p style="margin: 0px;">
+                                    <button style="background-color:white;margin: 0px;padding : 3px 3px 3px 3px;font-size: 12px;text-transform: uppercase;font-weight: 600;color: #3f3f3f;border: 1px solid #333333;border-radius: 5px;">Likely to sell out</button>                                
+                                </p>
+                                <h4>A sparkling day in the Prosecco Hills</h4>
+                                <svg class="UctUV d H0 hzzSG" viewBox="0 0 128 24" width="68" height="12" aria-label=""><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform=""></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(26 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(52 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(78 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(104 0)"></path></svg>
+                                <small style="font-size: 12px;letter-spacing: 1px;color: #333333;">148</small>
+                                <h5 style="font-size: 16px;margin-top: 5px;">from €179 per adult</h5>
+                            </div>
+                            <div class="card2 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/fancy3.jpg" alt="" width="270px" height="270px">
+                                    <img src="https://img.icons8.com/metro/26/null/like.png"/>
+                                </a>
+                                <h4>Sunset Private Yacht Tour in Cabo with Dinner, Snacks and Drinks</h4>
+                                <svg class="UctUV d H0 hzzSG" viewBox="0 0 128 24" width="68" height="12" aria-label=""><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform=""></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(26 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(52 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(78 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(104 0)"></path></svg>
+                                <small style="font-size: 12px;letter-spacing: 1px;color: #333333;">28</small>
+                                <h5 style="font-size: 16px;margin-top: 5px;">from €928 per adult</h5>
+                            </div>
+                            <div class="card2 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/fancy4.jpg" alt="" width="270px" height="270px">
+                                    <img src="https://img.icons8.com/metro/26/null/like.png"/>
+                                </a>
+                                <h4>Chicago Foodie Tour: Windy City Favs (Private & All-Inclusive)</h4>
+                                <svg class="UctUV d H0 hzzSG" viewBox="0 0 128 24" width="68" height="12" aria-label=""><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform=""></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(26 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(52 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(78 0)"></path><path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(104 0)"></path></svg>
+                                <small style="font-size: 12px;letter-spacing: 1px;color: #333333;">2,474</small>
+                                <h5 style="font-size: 16px;margin-top: 5px;">from €296 per adult</h5>
+                            </div>
+                            <div class="card2 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/fancy5.jpg" alt="" width="270px" height="270px">
+                                </a>
+                            </div>
+                            <div class="card2 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/fancy6.jpg" alt="" width="270px" height="270px">
+                                </a>
+                            </div>
+                            <div class="card2 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/fancy7.jpg" alt="" width="270px" height="270px">
+                                </a>
+                            </div>
+                            <div class="card2 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/fancy8.jpg" alt="" width="270px" height="270px">
+                                </a>
+                            </div>
+                            <div class="card2 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/fancy9.jpg" alt="" width="270px" height="270px">
+                                </a>
+                            </div>
+                            <div class="card2 card">
+                                <a href="">
+                                    <img src="assets/images/foods&drinks/fancy10.jpg" alt="" width="270px" height="270px">
+                                </a>
+                            </div>
+                        </div>
+                        <div id="right-arrow" style="margin-top: -110px;">
+                            <button class="arrow-btn" onclick="">
+                                <svg viewBox="0 0 24 24" width="24px" height="24px" class="d Vb UmNoP"><path d="M13.696 3.502a.624.624 0 00-.884.004l-.882.883a.624.624 0 000 .883l5.481 5.481H2.698a.624.624 0 00-.623.624v1.248c0 .346.279.623.623.625h14.714l-5.481 5.48a.624.624 0 000 .883l.882.883c.245.244.64.244.883 0l8.049-8.047a.646.646 0 000-.895l-8.049-8.048v-.004z"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            
+            <div class="more-card">
+                <div class="title">
+                    <h2>Find even more Things to Do</h2>
+                    <p>Browse other activities by interest</p>
+                </div>
+                <picture style="display: flex;justify-content: space-between;">
+                    <div class="more-card2"><a href="">
+                        <img src="assets/images/foods&drinks/outdoor.jpg" alt="" width="270" height="auto">
+                        <div class="card-black" style="background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.651) 80%);"></div>
+                    </a></div>
+                    <div class="more-card2"><a href="">
+                        <img src="assets/images/foods&drinks/arts.jpg" alt="" width="270" height="auto">
+                        <div class="card-black" style="background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.651) 80%);"></div>
+                    </a></div>
+                    <div class="more-card2"><a href="">
+                        <img src="assets/images/foods&drinks/water.jpg" alt="" width="270" height="auto">
+                        <div class="card-black" style="background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.651) 80%);"></div>
+                    </a></div>
+                    <div class="more-card2"><a href="">
+                        <img src="assets/images/foods&drinks/browse.jpg" alt="" width="270" height="auto">
+                        <div class="card-black" style="background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.651) 80%);"></div>
+                    </a></div>
+                </picture>
+            </div>
+            <hr>
+
+            <div class="social-icons">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.tripadvisor.com%2FArticles-lKMptZU6WDmY-Food_drink.html"><svg class="icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                width="30" height="30"
+                viewBox="0 0 30 30">
+                    <path d="M15,3C8.373,3,3,8.373,3,15c0,6.016,4.432,10.984,10.206,11.852V18.18h-2.969v-3.154h2.969v-2.099c0-3.475,1.693-5,4.581-5 c1.383,0,2.115,0.103,2.461,0.149v2.753h-1.97c-1.226,0-1.654,1.163-1.654,2.473v1.724h3.593L19.73,18.18h-3.106v8.697 C22.481,26.083,27,21.075,27,15C27,8.373,21.627,3,15,3z"></path>
+                </svg></a>
+                <a href="https://pinterest.com/pin/create/button?url=https%3A%2F%2Fwww.tripadvisor.com%2FArticles-lKMptZU6WDmY-Food_drink.html"><svg class="icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                width="30" height="30"
+                viewBox="0 0 30 30">
+                    <path d="M15,3C8.373,3,3,8.373,3,15c0,5.084,3.163,9.426,7.627,11.174c-0.105-0.949-0.2-2.406,0.042-3.442 c0.218-0.936,1.407-5.965,1.407-5.965s-0.359-0.719-0.359-1.781c0-1.669,0.967-2.914,2.171-2.914c1.024,0,1.518,0.769,1.518,1.69 c0,1.03-0.655,2.569-0.994,3.995c-0.283,1.195,0.599,2.169,1.777,2.169c2.133,0,3.772-2.249,3.772-5.495 c0-2.873-2.064-4.882-5.012-4.882c-3.414,0-5.418,2.561-5.418,5.208c0,1.031,0.397,2.137,0.893,2.739 c0.098,0.119,0.112,0.223,0.083,0.344c-0.091,0.379-0.293,1.194-0.333,1.361c-0.052,0.22-0.174,0.266-0.401,0.16 c-1.499-0.698-2.436-2.889-2.436-4.649c0-3.785,2.75-7.262,7.929-7.262c4.163,0,7.398,2.966,7.398,6.931 c0,4.136-2.608,7.464-6.227,7.464c-1.216,0-2.359-0.632-2.75-1.378c0,0-0.602,2.291-0.748,2.853 c-0.271,1.042-1.002,2.349-1.492,3.146C12.57,26.812,13.763,27,15,27c6.627,0,12-5.373,12-12S21.627,3,15,3z"></path>
+                </svg></a>
+                <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.tripadvisor.com%2FArticles-lKMptZU6WDmY-Food_drink.html"><svg class="icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                width="24" height="24"
+                viewBox="0 0 24 24">
+                    <path d="M22,3.999c-0.78,0.463-2.345,1.094-3.265,1.276c-0.027,0.007-0.049,0.016-0.075,0.023c-0.813-0.802-1.927-1.299-3.16-1.299 c-2.485,0-4.5,2.015-4.5,4.5c0,0.131-0.011,0.372,0,0.5c-3.353,0-5.905-1.756-7.735-4c-0.199,0.5-0.286,1.29-0.286,2.032 c0,1.401,1.095,2.777,2.8,3.63c-0.314,0.081-0.66,0.139-1.02,0.139c-0.581,0-1.196-0.153-1.759-0.617c0,0.017,0,0.033,0,0.051 c0,1.958,2.078,3.291,3.926,3.662c-0.375,0.221-1.131,0.243-1.5,0.243c-0.26,0-1.18-0.119-1.426-0.165 c0.514,1.605,2.368,2.507,4.135,2.539c-1.382,1.084-2.341,1.486-5.171,1.486H2C3.788,19.145,6.065,20,8.347,20 C15.777,20,20,14.337,20,8.999c0-0.086-0.002-0.266-0.005-0.447C19.995,8.534,20,8.517,20,8.499c0-0.027-0.008-0.053-0.008-0.08 c-0.003-0.136-0.006-0.263-0.009-0.329c0.79-0.57,1.475-1.281,2.017-2.091c-0.725,0.322-1.503,0.538-2.32,0.636 C20.514,6.135,21.699,4.943,22,3.999z"></path>
+                </svg></a>
+                <a href="mailto:"><img src="https://img.icons8.com/material-outlined/24/null/mail.png" class="icon"/></a>
+                <a href="food&drinks.html"><img src="https://img.icons8.com/material-rounded/24/null/link--v1.png" class="icon" style="transform: rotate(-45deg);"/></a>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <div class="division-12">
+            <div class="footer-links">
+                <p>About Tripadvisor</p>
+                <p>Explore</p>
+                <p>Do Business With Us</p>
+                <p></p>
+                <p></p>
+                <p>Tripadvisor Sites</p>
+
+                <a href="#">About Us</a>
+                <a href="#">Write a review</a>
+                <a href="#">Owners</a>
+                <p></p>
+                <p></p>
+                <p style="font-size: 14px;">Discover your dream destination with <a href="#">Jetsetter</a></p>
+
+                <a href="#">Press</a>
+                <a href="#">Add a Place</a>
+                <a href="#">Business Advantage</a>
+                <p></p>
+                <p></p>
+                <p style="font-size: 14px;">Book the best restaurants with <a href="#">TheFork</a></p>
+
+                <a href="#">Resources and Policies</a>
+                <a href="#">Join</a> 
+                <a href="#">Sponsored Placements</a>
+                <p></p>
+                <p></p>
+                <p style="font-size: 14px;">Book tours and attraction tickets on <a href="#">Viator</a></p>
+
+                <a href="#">Careers</a>
+                <a href="#">Travelers' Choice</a>
+                <a href="#">Advertise with Us</a>
+                <p></p>
+                <p></p>
+                <p style="font-size: 14px;">Read cruise reviews on <a href="#">Cruise Critic</a></p>
+
+                <a href="#">Investor Relations</a>
+                <a href="#">GreenLeaders</a>
+                <a href="#">Access our Content API</a>
+                <p></p>
+                <p></p>
+                <p style="font-size: 14px;">Get airline seating charts on <a href="#">Seat Guru</a></p>
+
+                <a href="#">Trust & Safety</a>
+                <a href="#">Blog</a>
+                <a href="#">Become an Affiliate</a>
+                <p></p>
+                <p></p>
+                <p style="font-size: 14px;">Find vacation rentals on <a href="#">FlipKey</a></p>
+
+                <a href="#">Contact us</a>
+                <a href="#">Help Center</a>
+                <p aria-disabled="true"></p>
+                <p></p>
+                <p></p>
+                <p style="font-size: 14px;">Search for holiday rentals on <a href="#">Holiday Lettings</a></p>
+
+                <a href="#">Accessibility Statement</a>
+                <a href="#">Tripadvisor Plus</a>
+                <p>Get The App</p>
+                <p></p>
+                <p></p>
+                <p style="font-size: 14px;">Plan and book your next trip with <a href="#">Reco Trip Designers</a></p>
+
+                <a href="#" aria-disabled="true"></a>
+                <a href="#">Travel Articles</a>
+                <a href="#">iPhone App</a>
+                <p></p>
+                <p></p>
+                <p aria-disabled="true"></p>
+
+                <p aria-disabled="true"></a>
+                <p aria-disabled="true"></p>
+                <a href="#">Android App</a>
+                <p></p>
+                <p></p>
+                <p aria-disabled="true"></p>
+            </div>
+            <div class="bottom-link">
+                <picture style="display: flex; align-items: center;">
+                    <img src="assets/images/logo.ico" alt="" width="40px" height="40px" style="padding: 10px 15px 15px 0px;">
+                    <div style="display: flex;flex-direction: column;">
+                        <small>&copy; 2023 Tripadvisor LLC All rights reserved.</small>
+                        <span style="height:5px"></span>
+                        <div class="licence-links">
+                            <a href="">Terms of Use</a>
+                            <a href="">Privacy and Cookies Statement</a>
+                            <a href="">Cookie consent</a>
+                            <a href="">Site Map</a>
+                            <a href="">How the site works</a>
+                            <a href="">Contact us</a>
+                        </div>
+                    </div>
+                </picture>
+                <div class="selection-btn" style="display: flex;">
+                    <button >
+                        <div style="display: flex;align-items: center;">
+                            <span style="margin-left: -50px;margin-right: 40px;">€ EUR</span>
+                            <svg viewBox="0 0 24 24" width="20px" height="20px" class="d Vb UmNoP"><path d="M19.324 9.175l-6.8 6.6c-.3.301-.7.301-1 0l-6.8-6.6c-.3-.3-.3-.7 0-1 .1-.101.3-.2.5-.2h13.6c.4 0 .7.3.7.7 0 .2-.1.399-.2.5z"></path></svg>
+                        </div>
+                    </button>
+                    <button >
+                        <div style="display: flex;align-items: center;padding: 6px 1px;">
+                            <span>United States</span>
+                            <svg viewBox="0 0 24 24" width="20px" height="20px" class="d Vb UmNoP"><path d="M19.324 9.175l-6.8 6.6c-.3.301-.7.301-1 0l-6.8-6.6c-.3-.3-.3-.7 0-1 .1-.101.3-.2.5-.2h13.6c.4 0 .7.3.7.7 0 .2-.1.399-.2.5z"></path></svg>
+                        </div>
+                    </button>
+                </div>
+                <div class="">
+                    <small>
+                        This is the version of our website addressed to speakers of 
+                        English in the United States. If you are a resident of another country 
+                        or region, please select the appropriate version of Tripadvisor for
+                        your country orregion in the drop-down menu.<a href="" style="text-decoration: none; color: black;font-weight: 600;">more</a>
+                    </small>
+                </div>
+                <div class="social-links">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                    width="30" height="30"
+                    viewBox="0 0 30 30">
+                        <path d="M15,3C8.373,3,3,8.373,3,15c0,6.016,4.432,10.984,10.206,11.852V18.18h-2.969v-3.154h2.969v-2.099c0-3.475,1.693-5,4.581-5 c1.383,0,2.115,0.103,2.461,0.149v2.753h-1.97c-1.226,0-1.654,1.163-1.654,2.473v1.724h3.593L19.73,18.18h-3.106v8.697 C22.481,26.083,27,21.075,27,15C27,8.373,21.627,3,15,3z"></path>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                    width="24" height="24"
+                    viewBox="0 0 24 24">
+                        <path d="M22,3.999c-0.78,0.463-2.345,1.094-3.265,1.276c-0.027,0.007-0.049,0.016-0.075,0.023c-0.813-0.802-1.927-1.299-3.16-1.299 c-2.485,0-4.5,2.015-4.5,4.5c0,0.131-0.011,0.372,0,0.5c-3.353,0-5.905-1.756-7.735-4c-0.199,0.5-0.286,1.29-0.286,2.032 c0,1.401,1.095,2.777,2.8,3.63c-0.314,0.081-0.66,0.139-1.02,0.139c-0.581,0-1.196-0.153-1.759-0.617c0,0.017,0,0.033,0,0.051 c0,1.958,2.078,3.291,3.926,3.662c-0.375,0.221-1.131,0.243-1.5,0.243c-0.26,0-1.18-0.119-1.426-0.165 c0.514,1.605,2.368,2.507,4.135,2.539c-1.382,1.084-2.341,1.486-5.171,1.486H2C3.788,19.145,6.065,20,8.347,20 C15.777,20,20,14.337,20,8.999c0-0.086-0.002-0.266-0.005-0.447C19.995,8.534,20,8.517,20,8.499c0-0.027-0.008-0.053-0.008-0.08 c-0.003-0.136-0.006-0.263-0.009-0.329c0.79-0.57,1.475-1.281,2.017-2.091c-0.725,0.322-1.503,0.538-2.32,0.636 C20.514,6.135,21.699,4.943,22,3.999z"></path>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                    width="30" height="30"
+                    viewBox="0 0 30 30">
+                        <path d="M15,3C8.373,3,3,8.373,3,15c0,5.084,3.163,9.426,7.627,11.174c-0.105-0.949-0.2-2.406,0.042-3.442 c0.218-0.936,1.407-5.965,1.407-5.965s-0.359-0.719-0.359-1.781c0-1.669,0.967-2.914,2.171-2.914c1.024,0,1.518,0.769,1.518,1.69 c0,1.03-0.655,2.569-0.994,3.995c-0.283,1.195,0.599,2.169,1.777,2.169c2.133,0,3.772-2.249,3.772-5.495 c0-2.873-2.064-4.882-5.012-4.882c-3.414,0-5.418,2.561-5.418,5.208c0,1.031,0.397,2.137,0.893,2.739 c0.098,0.119,0.112,0.223,0.083,0.344c-0.091,0.379-0.293,1.194-0.333,1.361c-0.052,0.22-0.174,0.266-0.401,0.16 c-1.499-0.698-2.436-2.889-2.436-4.649c0-3.785,2.75-7.262,7.929-7.262c4.163,0,7.398,2.966,7.398,6.931 c0,4.136-2.608,7.464-6.227,7.464c-1.216,0-2.359-0.632-2.75-1.378c0,0-0.602,2.291-0.748,2.853 c-0.271,1.042-1.002,2.349-1.492,3.146C12.57,26.812,13.763,27,15,27c6.627,0,12-5.373,12-12S21.627,3,15,3z"></path>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                    width="24" height="24"
+                    viewBox="0 0 24 24">
+                        <path d="M 8 3 C 5.243 3 3 5.243 3 8 L 3 16 C 3 18.757 5.243 21 8 21 L 16 21 C 18.757 21 21 18.757 21 16 L 21 8 C 21 5.243 18.757 3 16 3 L 8 3 z M 8 5 L 16 5 C 17.654 5 19 6.346 19 8 L 19 16 C 19 17.654 17.654 19 16 19 L 8 19 C 6.346 19 5 17.654 5 16 L 5 8 C 5 6.346 6.346 5 8 5 z M 17 6 A 1 1 0 0 0 16 7 A 1 1 0 0 0 17 8 A 1 1 0 0 0 18 7 A 1 1 0 0 0 17 6 z M 12 7 C 9.243 7 7 9.243 7 12 C 7 14.757 9.243 17 12 17 C 14.757 17 17 14.757 17 12 C 17 9.243 14.757 7 12 7 z M 12 9 C 13.654 9 15 10.346 15 12 C 15 13.654 13.654 15 12 15 C 10.346 15 9 13.654 9 12 C 9 10.346 10.346 9 12 9 z"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

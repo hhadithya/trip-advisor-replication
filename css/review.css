@@ -1,0 +1,112 @@
+.content1{
+    background-color: #FAF1ED;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.section-1{
+    width: 1136px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    height: 220px;
+}
+.section-1 h1{
+    margin: 0px;
+    font-size: 42px;
+    font-weight: 800;
+}
+.section-1 span{
+    width: 670px;
+    font-size: 24px;
+    font-weight: 500;
+}
+.review-search input{
+    border: none;
+    width: 90%;
+    padding: 13px 12px 13px 0px;
+    font-size: 17px;
+    margin: 3px 0px;
+    z-index: 4;
+}
+.review-search input:focus{
+    outline: none;
+}
+.review-search{
+    display: flex;
+    align-items: center;
+    border: 2px solid rgba(216, 216, 216, 0.577);
+    background-color: white;
+    width: 750px;
+    border-radius: 25px;
+}
+.review-search svg{
+    width: 20px;
+    height: auto;
+    padding: 0px 10px;
+}
+.img-card{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    align-items: center;
+    width: 550px;
+}
+.section-2{
+    padding: 96px 0px;
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    /* display: contents; */
+}
+.why-review{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: 16px;
+}
+.add{
+    font-weight: 600;
+    border: 2px solid black;
+    border-radius: 25px;
+    padding: 15px 0px;
+    margin-top: 20px;
+    margin: 20px 25px 0px 25px;
+}
+.add:hover{
+    background-color: black;
+    color: white;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.img-text{
+    position: absolute;
+    text-align: left;
+    width: 300px;
+    color: white;
+    padding: 0px 50px 25px 25px;
+    margin-top: 280px;
+    background-image: linear-gradient(to top, black 10%, rgba(255, 255, 255, 0.048) 90%);
+}
+.img-text h2{
+    font-size: 35px;
+    margin: 10px 0px;
+}
+.learn-btn{
+    margin-top: 30px;
+    color: rgb(0, 0, 0);
+    background-color: white;
+    width: 85px;
+    padding: 15px 20px;
+    text-align: center;
+    border-radius: 30px;
+    font-weight: 600;
+}
+.learn-btn:hover{
+    opacity: 0.9;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}

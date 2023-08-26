@@ -1,0 +1,154 @@
+@font-face {
+    font-family: "Trip Sans";
+    src: url("../assets/fonts/TripSans-Regular.ttf");
+}
+*{
+    font-family: "Trip Sans";
+    text-decoration: none;
+}
+body{
+    margin: 0px;
+    box-sizing: border-box;
+    padding: 0px;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header{
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+.nav-bar, .section-2{
+    align-items: center;
+    width: 1136px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+}
+.main-logo img{
+    width: 188px;
+    height: 39.99px;
+    padding-top: 5px;
+}
+.nav-links{
+    display: flex;
+    /* width: 920px; */
+    height: 42px;
+    font-size: 16px;
+    font-weight:bold;
+}
+.nav-bar svg{
+    width: 24px;
+}
+.nav-search-box{
+    padding: 0px 100px 0px 35px;
+}
+.nav-search-box form{
+    padding: 0px 0px 0px 12px;
+    display: flex;
+    height: 40px;
+    width: 340px;
+    align-items: center;
+    border: 1.5px solid rgb(208, 208, 208);
+    border-radius: 20px;
+}
+.nav-search-box input{
+    padding: 0px 0px 0px 20px;
+    border: none;
+    height: 38px;
+    width: 225px;
+    font-size: 18px;
+}
+.nav-search-box input:focus{
+    outline: none;
+}
+.nav-links a{
+    display: flex;
+    color: black;
+    border: 1.6px;
+}
+.link-text{
+    padding: 3px 1px 0px 4px;
+}
+.link-card{
+    padding: 10px;
+}
+.link-card:hover{
+    background-color: rgba(234, 234, 234, 0.745);
+    border-radius: 20px;
+    transition: 0.2s;
+}
+.sign-in-btn:hover{
+    opacity: 0.8;
+    transition: 0.4s;
+    cursor: pointer;
+}
+.sign-in-back{
+    display: flex;
+    justify-content: center;
+}
+.sign-in-card{
+    display: none;
+    /* margin-top: 50px; */
+    background-color: white;
+    position: absolute;
+    border-radius: 15px;
+    filter: drop-shadow(2px 2px 2px rgb(30, 30, 30));
+    width: 475px;
+    z-index: 4;
+}
+.svg1{
+    float: right;
+    padding: 20px 20px 0px 0px;
+    width: 20px;
+    height: auto;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px;
+}
+.content h2{
+    font-size: 30px;
+    line-height: 32px;
+    padding-bottom: 30px;
+}
+.content svg, .content img:nth-child(2){
+    width: 30px;
+    height: auto;
+    padding: 0px;
+}
+.content button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 100px;
+    padding: 10px 0px;
+    width: 400px;
+    margin-bottom: 20px;
+}
+.content span{
+    font-size: 16px;
+    font-weight: 700;
+    padding: 0px 90px;
+}
+.content button img, .content button svg{
+    width: 24px;
+    height: auto;
+}
+.capcha{
+    margin-top: 100px;
+    font-size: 12px;
+    text-align: center;
+    justify-content: center;
+    color: #585858;
+}
